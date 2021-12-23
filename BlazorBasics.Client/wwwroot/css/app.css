@@ -2,6 +2,8 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #101040;
+    color: whitesmoke;
 }
 
 h1:focus {
