@@ -1,6 +1,6 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">BlazorBasics.Client</a>
+        <a class="navbar-brand" href="">Blazor Basics</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -12,6 +12,21 @@
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="PageWithRouteParameters/42/21" Match="NavLinkMatch.All">
+                Page with Route Parameter Demo (with optional parameter)
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="PageWithRouteParameters/42" Match="NavLinkMatch.All">
+                Page with Route Parameter Demo (without optional parameter)
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="ComponentDemo" Match="NavLinkMatch.All">
+                Component Demo
             </NavLink>
         </div>
     </nav>
