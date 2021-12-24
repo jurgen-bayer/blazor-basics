@@ -1,15 +1,20 @@
-﻿@page "/PageWithRouteParameters/{mandatoryValue:int}/{optionalValue:int?}"
+﻿@page "/PageWithRouteParameters/{mandatoryNumber:int}/{mandatoryString}/{optionalNumber:int?}"
 
 <h1>Page with Route Parameters</h1>
 
-<div class="mt-4">The passed mandatory value is @MandatoryValue</div>
+<div class="mt-4">The passed mandatory number is @MandatoryNumber</div>
 
-<div class="mt-2">The passed optional value is @(OptionalValue.HasValue ? OptionalValue.Value : "NULL")</div>
+<div class="mt-2">The passed mandatory string is '@MandatoryString'</div>
+
+<div class="mt-2">The passed optional value is @(OptionalNumber.HasValue ? OptionalNumber.Value : "NULL")</div>
 
 @code {
     [Parameter]
-    public int MandatoryValue { get; set; }
+    public int MandatoryNumber { get; set; }
+    
+    [Parameter]
+    public string? MandatoryString { get; set; }
 
     [Parameter]
-    public int? OptionalValue { get; set; }
+    public int? OptionalNumber { get; set; }
 }
