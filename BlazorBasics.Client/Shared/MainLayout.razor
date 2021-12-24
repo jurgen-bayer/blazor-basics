@@ -1,4 +1,8 @@
+@using BlazorBasics.Client.Services
 @inherits LayoutComponentBase
+
+<!-- Inject the counter service -->
+@inject ICounterService counterService
 
 <div class="page">
     <div class="sidebar">
@@ -7,6 +11,7 @@
 
     <main>
         <div class="top-row px-4">
+            <span>@this.counterService.Count</span>
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
         </div>
 
