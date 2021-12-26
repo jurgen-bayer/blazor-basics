@@ -1,0 +1,20 @@
+﻿@page "/ServiceDemo"
+@using BlazorBasics.Client.Services
+@inject IOtherServiceUsingCounterService otherServiceUsingCounterService;
+
+<h3>Service Demo</h3>
+<div class="mt-4 alert alert-info running-text">See also <a href="https://github.com/freeboarder42/blazor-webassembly-service-lifetime-demo">
+    https://github.com/freeboarder42/blazor-webassembly-service-lifetime-demo</a> for a service lifetime demo and
+    demo of a Utility Base Component Class solving the problem that the Scoped lifetime is actually Singleton for 
+    normal service injections.</div>
+
+<div class="mt-4">
+    <ComponentWithService></ComponentWithService>
+</div>
+
+<div class="mt-5">
+    <button class="btn btn-primary" @onclick="GetCountFromOtherServiceUsingCounterService">Get Count from Other Service using ICounterService</button>
+</div>
+<div class="mt-2">
+    Last read count: @LastCountFromOtherServiceUsingCounterService
+</div>

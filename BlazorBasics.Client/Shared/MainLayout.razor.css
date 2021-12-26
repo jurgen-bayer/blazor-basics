@@ -9,11 +9,11 @@ main {
 }
 
 .sidebar {
-    background-color: #202060;
+    background-color: #303050;
 }
 
 .top-row {
-    background-color: #202060;
+    background-color: #303050;
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;

@@ -2,8 +2,16 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #101040;
+    background-color: #202030;
     color: whitesmoke;
+}
+
+a, a:hover, a:visited, .nav-link {
+    color: whitesmoke;
+}
+
+.alert a, .alert a:hover, .alert a:visited {
+    color: navy;
 }
 
 .loading {
@@ -34,6 +42,10 @@ a, .btn-link {
 
 .content {
     padding-top: 1.1rem;
+}
+
+.running-text {
+    width: 700px;
 }
 
 .valid.modified:not([type=checkbox]) {

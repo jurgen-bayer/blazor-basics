@@ -2,12 +2,12 @@
 
 public partial class ComponentWithService
 {
-    public void IncreaseCount()
+    private void IncreaseCount()
     {
         this.counterService.Increase(1);
     }
-    
-    public void DecreaseCount()
+
+    private void DecreaseCount()
     {
         this.counterService.Decrease(1);
     }
