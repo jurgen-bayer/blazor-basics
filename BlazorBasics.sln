@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBasics.Client", "BlazorBasics.Client\BlazorBasics.Client.csproj", "{3F7A8118-7532-4B42-8ABA-3ED607F0A1A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBasics.Shared", "BlazorBasics.Shared\BlazorBasics.Shared.csproj", "{5E1C6288-1035-47C0-A8BA-7636A33ED4EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{3F7A8118-7532-4B42-8ABA-3ED607F0A1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F7A8118-7532-4B42-8ABA-3ED607F0A1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F7A8118-7532-4B42-8ABA-3ED607F0A1A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E1C6288-1035-47C0-A8BA-7636A33ED4EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E1C6288-1035-47C0-A8BA-7636A33ED4EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E1C6288-1035-47C0-A8BA-7636A33ED4EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E1C6288-1035-47C0-A8BA-7636A33ED4EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

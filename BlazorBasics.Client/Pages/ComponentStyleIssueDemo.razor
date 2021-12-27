@@ -1,0 +1,42 @@
+﻿@page "/ComponentStyleIssueDemo"
+@using BlazorBasics.Shared
+<h1>Component Style Issue Demo</h1>
+
+<EditForm Model="@starship">
+    <div class="mt-3">
+        Blazor input components like <code>InputText</code> and <code>InputNumber</code> aparently cannot be
+        styled via the component's CSS file for some reason (it would work in the app.css file though).
+    </div>
+    <div class="mt-3 alert alert-info">
+        It seems as if Blazor inpput elements must be styled in the app.css file via dedicated classes.
+    </div>
+
+    <div class="mt-3">This <code>InputText</code> input should only be 100px wide and with a steel blue background:</div>
+    <div>
+        <InputText @bind-Value="starship.Identifier"/>
+    </div>
+    <div class="mt-3">This <code>InputNumber</code> input should only be 50px wide and with a steel blue background:</div>
+    <div>
+        <InputNumber @bind-Value="starship.MaximumAccommodation"/>
+    </div>
+
+    <div class="mt-3">Blazor components styled via classes defined in app.css:</div>
+    <div>
+        <InputText @bind-Value="starship.Identifier" class="blue-100"/>
+    </div>
+    <div class="mt-2">
+        <InputNumber @bind-Value="starship.MaximumAccommodation" class="blue-50"/>
+    </div>
+
+    <div class="mt-3">For HTML input elements the styles in the component's CSS file work though:</div>
+    <div>
+        <input/>
+    </div>
+    <div class="mt-2">
+        <input type="number"/>
+    </div>
+</EditForm>
+
+@code {
+    private readonly Starship starship = new Starship();
+}

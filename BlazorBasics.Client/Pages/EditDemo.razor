@@ -1,0 +1,72 @@
+﻿@using Microsoft.Extensions.Logging
+@page "/EditDemo"
+@inject ILogger<EditDemo> logger
+
+<h1>Edit Demo</h1>
+
+<EditForm Model="@starship" OnValidSubmit="@handleValidSubmit" class="mt-5" >
+    <DataAnnotationsValidator/>
+
+    <div class="row test">
+        <div class="col-4">
+            <label>Identifier:</label>
+        </div>
+        <div class="col-4">
+            <InputText @bind-Value="starship.Identifier" class="form-control"/>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-4">
+            <label>Description (optional):</label>
+        </div>
+        <div class="col-4">
+            <InputTextArea @bind-Value="starship.Description" class="form-control"/>
+        </div>
+
+    </div>
+    <div class="row mt-2">
+        <div class="col-4">
+            <label>Primary Classification: </label>
+        </div>
+        <div class="col-4">
+            <InputSelect @bind-Value="starship.Classification" class="form-control">
+                <option value="">Select classification ...</option>
+                <option value="Exploration">Exploration</option>
+                <option value="Diplomacy">Diplomacy</option>
+                <option value="Defense">Defense</option>
+            </InputSelect>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-4">
+            <label>Maximum Accommodation:</label>
+        </div>
+        <div class="col-4">
+            <InputNumber @bind-Value="starship.MaximumAccommodation" class="form-control medium-number-width"/>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-4">
+            <label>Engineering Approval:</label>
+        </div>
+        <div class="col-4">
+            <InputCheckbox @bind-Value="starship.IsValidatedDesign" />
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-4">
+            <label>Production Date:</label>
+        </div>
+        <div class="col-4">
+            <InputDate @bind-Value="starship.ProductionDate" class="form-control date-width"/>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-4">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <ValidationSummary/>
+    </div>
+</EditForm>

@@ -1,0 +1,11 @@
+﻿input {
+    width: 100px;
+    background-color: steelblue;
+    color: whitesmoke;
+}
+
+input[type=number] {
+    width: 50px;
+    background-color: steelblue;
+    color: whitesmoke;
+}
