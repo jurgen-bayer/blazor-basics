@@ -16,9 +16,6 @@ public partial class EditDemoHandlingInvalidInputInCode
         var jsonSerializerOptions = new JsonSerializerOptions { WriteIndented = true };
         var starshipJson = JsonSerializer.Serialize(this.starship, jsonSerializerOptions);
         this.logger.LogInformation(starshipJson);
-        
-        // Example for using the JavaScript Runtime to call console.log to log an object
-        this.jsRuntime.InvokeVoidAsync("console.log", this.starship);
     }
 
     private void HandleInvalidSubmit()

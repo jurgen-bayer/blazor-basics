@@ -1,0 +1,46 @@
+﻿@page "/AccessJavaScriptRuntimeDemo"
+@using BlazorBasics.Shared
+@inject IJSRuntime jsRuntime;
+
+<h1>Access Java Script Runtime Demo</h1>
+<div class="mt-4">
+    <button class="btn btn-primary" onclick="@WriteObjectToConsole">
+        Write to Console
+    </button>
+</div>
+<div class="mt-3">
+    <button class="btn btn-primary" onclick="@GetFunctionResultDemo">
+        Get Function Result
+    </button>
+</div>
+@if (this.resultFromJavaScript.HasValue)
+{
+    <div class="mt-2">
+        Result from JavaScript: @this.resultFromJavaScript
+    </div>
+}
+
+@code {
+    private int? resultFromJavaScript;
+
+    private async Task WriteObjectToConsole()
+    {
+        var starship = new Starship
+        {
+            Identifier = "Heart of Gold",
+            Classification = "Diplomacy",
+            MaximumAccommodation = 4,
+            IsValidatedDesign = true
+        };
+        await this.jsRuntime.InvokeVoidAsync("console.log", starship);
+    }
+
+    private async Task GetFunctionResultDemo()
+    {
+        // Note that getNumber is definded in index.html because a script tag 
+        // must not be included in a Blazor component. See 
+        // https://docs.microsoft.com/en-us/aspnet/core/blazor/javascript-interoperability/?view=aspnetcore-6.0#location-of-javascript 
+        this.resultFromJavaScript = 
+            await this.jsRuntime.InvokeAsync<int>("getNumber", 42);
+    }
+}
