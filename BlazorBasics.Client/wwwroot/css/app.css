@@ -59,7 +59,7 @@ input[type=checkbox] {
     height: 28px;
 }
 
-/* Style the ValidationSummary component */
+/* Styles for the ValidationSummary component */
 .validation-errors {
     background-color: darkgoldenrod;
     padding: 10px;
@@ -75,7 +75,16 @@ input[type=checkbox] {
     color: darkred;
 }
 
-/* Style invalid input elements */
+/* Style for sole validation messages  */
+div.validation-message {
+    color: darkred;
+    background-color: darkgoldenrod;
+    margin-top: 2px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/* Styles for invalid input elements */
 .invalid {
     outline: inherit; /* Reset the default outline */
     background-color: darkgoldenrod; 

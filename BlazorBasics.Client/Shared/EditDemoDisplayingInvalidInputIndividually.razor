@@ -1,0 +1,47 @@
+﻿@inject ILogger<EditDemoHandlingInvalidInputViaDataAnnotationsValidator> logger;
+
+<h3>Edit Demo Displaying Invalid Input Individually</h3>
+
+<EditForm Model="@starship" OnValidSubmit="@HandleValidSubmit" class="mt-4">
+    <DataAnnotationsValidator/>
+
+    <div class="form-group">
+        <label>Identifier:</label>
+        <InputText @bind-Value="starship.Identifier" class="form-control"/>
+        <ValidationMbessage For="() => starship.Identifier"></ValidationMbessage>
+    </div>
+    <div class="form-group">
+        <label>Description (optional):</label>
+        <InputTextArea @bind-Value="starship.Description" class="form-control"/>
+        <ValidationMessage For="() => starship.Description"></ValidationMessage>
+    </div>
+    <div class="form-group">
+        <label>Primary Classification: </label>
+        <InputSelect @bind-Value="starship.Classification" class="form-control">
+            <option value="">Select classification ...</option>
+            <option value="Exploration">Exploration</option>
+            <option value="Diplomacy">Diplomacy</option>
+            <option value="Defense">Defense</option>
+        </InputSelect>
+        <ValidationMessage For="() => starship.Classification"></ValidationMessage>
+    </div>
+    <div class="form-group">
+        <label>Maximum Accommodation:</label>
+        <InputNumber @bind-Value="starship.MaximumAccommodation" class="form-control medium-number-width"/>
+        <ValidationMessage For="() => starship.MaximumAccommodation"></ValidationMessage>
+
+    </div>
+    <div class="form-group">
+        <div>Engineering Approval</div>
+        <InputCheckbox @bind-Value="starship.IsValidatedDesign"/>
+        <ValidationMessage For="() => starship.IsValidatedDesign"></ValidationMessage>
+    </div>
+    <div class="form-group">
+        <label>Production Date:</label>
+        <InputDate @bind-Value="starship.ProductionDate" class="form-control date-width"/>
+        <ValidationMessage For="() => starship.ProductionDate"></ValidationMessage>
+    </div>
+    <div class="mt-4">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</EditForm>
