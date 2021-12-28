@@ -53,12 +53,34 @@ a, .btn-link {
     outline: 1px solid #26b050;
 }
 
-.invalid {
-    outline: 1px solid red;
+/* Style the checkbox */
+input[type=checkbox] {
+    width: 28px;
+    height: 28px;
+}
+
+/* Style the ValidationSummary component */
+.validation-errors {
+    background-color: darkgoldenrod;
+    padding: 10px;
+    border-radius: 4px;
+    max-width: 700px;
+}
+
+.validation-errors li {
+    list-style-type: none; /* Remove bullets */
 }
 
 .validation-message {
-    color: red;
+    color: darkred;
+}
+
+/* Style invalid input elements */
+.invalid {
+    outline: inherit; /* Reset the default outline */
+    background-color: darkgoldenrod; 
+    border-color: darkgoldenrod;
+    color: darkred;
 }
 
 #blazor-error-ui {
